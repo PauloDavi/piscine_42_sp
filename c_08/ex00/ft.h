@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 00:22:45 by paulodavi         #+#    #+#             */
-/*   Updated: 2023/03/20 15:28:39 by pdavi-al         ###   ########.fr       */
+/*   Created: 2023/03/21 07:03:40 by pdavi-al          #+#    #+#             */
+/*   Updated: 2023/03/21 19:51:18 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_power(int nb, int power)
-{
-	int	number;
+#ifndef FT_H
+# define FT_H
 
-	number = nb;
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	if (power > 1)
-		return (nb * ft_recursive_power(nb, power - 1));
-	return (nb);
-}
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
+
+#endif

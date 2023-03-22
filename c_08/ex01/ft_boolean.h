@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 00:22:45 by paulodavi         #+#    #+#             */
-/*   Updated: 2023/03/20 15:28:39 by pdavi-al         ###   ########.fr       */
+/*   Created: 2023/03/21 07:11:30 by pdavi-al          #+#    #+#             */
+/*   Updated: 2023/03/21 07:20:32 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_power(int nb, int power)
-{
-	int	number;
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-	number = nb;
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	if (power > 1)
-		return (nb * ft_recursive_power(nb, power - 1));
-	return (nb);
-}
+# include <unistd.h>
+
+typedef int	t_bool;
+
+# define TRUE 1
+# define FALSE 0
+
+# define EVEN(nb) (nb % 2 == 0)
+
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
+
+# define SUCCESS 0
+
+void		ft_putstr(char *str);
+t_bool		ft_is_even(int nbr);
+
+#endif

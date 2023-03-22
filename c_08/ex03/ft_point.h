@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 00:22:45 by paulodavi         #+#    #+#             */
-/*   Updated: 2023/03/20 15:28:39 by pdavi-al         ###   ########.fr       */
+/*   Created: 2023/03/21 07:21:58 by pdavi-al          #+#    #+#             */
+/*   Updated: 2023/03/21 07:35:35 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_power(int nb, int power)
-{
-	int	number;
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-	number = nb;
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	if (power > 1)
-		return (nb * ft_recursive_power(nb, power - 1));
-	return (nb);
-}
+typedef struct s_point
+{
+	int	x;
+	int	y;
+}		t_point;
+
+void	set_point(t_point *point);
+
+#endif

@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 00:22:45 by paulodavi         #+#    #+#             */
-/*   Updated: 2023/03/20 15:28:39 by pdavi-al         ###   ########.fr       */
+/*   Created: 2023/03/18 03:32:57 by pdavi-al          #+#    #+#             */
+/*   Updated: 2023/03/18 03:51:27 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_power(int nb, int power)
-{
-	int	number;
+#include <stdlib.h>
 
-	number = nb;
-	if (power < 0)
+int	ft_ultimate_range(int **range, int min, int max)
+{
+	int	i;
+	int	range_size;
+	int	*aux;
+
+	if (min >= max)
+	{
+		*range = NULL;
 		return (0);
-	if (power == 0)
-		return (1);
-	if (power > 1)
-		return (nb * ft_recursive_power(nb, power - 1));
-	return (nb);
+	}
+	i = 0;
+	range_size = max - min;
+	aux = (int *)malloc((range_size) * sizeof(int));
+	if (aux == NULL)
+	{
+		*range = NULL;
+		return (-1);
+	}
+	while (i < range_size)
+	{
+		aux[i] = i + min;
+		i++;
+	}
+	*range = aux;
+	return (range_size);
 }
