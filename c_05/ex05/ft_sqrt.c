@@ -3,27 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paulodavi <paulodavi@student.42.fr>        +#+  +:+       +#+        */
+/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 22:32:12 by paulodavi         #+#    #+#             */
-/*   Updated: 2023/03/16 22:41:54 by paulodavi        ###   ########.fr       */
+/*   Created: 2023/03/18 16:06:00 by pdavi-al          #+#    #+#             */
+/*   Updated: 2023/03/20 19:22:14 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_sqrt(int nb)
 {
-	int	i;
+	int	n;
 
 	if (nb <= 0)
 		return (0);
-	if (nb == 1)
-		return (1);
-	i = 1;
-	while (i < nb / 2)
-	{
-		if (i * i == nb)
-			return (i);
-		i++;
-	}
+	n = 2;
+	while (n * n != nb && n < 46341)
+		n++;
+	if (n * n == nb)
+		return (n);
 	return (0);
 }

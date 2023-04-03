@@ -6,28 +6,32 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 04:14:42 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/03/18 15:20:16 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/03/23 03:08:23 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
-#include <stddef.h>
-#include <unistd.h>
+#include <stdlib.h>
 
 int		ft_strlen(char *str);
-char	*ft_strstr(char *str, char *to_find);
-void	ft_putnbr(int nb, char *base, int base_len);
 bool	ft_verify_base(char *base);
 int		ft_strchar(char *str, char to_find);
-void	ft_putnbr_base(int nbr, char *base);
+char	*ft_convnbr_base(int nbr, char *base);
+int		ft_atoi_base(char *str, char *base);
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to);
+int		ft_nbrlen(int nbr, int base_len);
+int		mod(int nbr);
 
-void	ft_putnbr_base(int nbr, char *base)
+int	ft_strchar(char *str, char to_find)
 {
-	int	base_len;
+	int	i;
 
-	base_len = ft_strlen(base);
-	if (ft_verify_base(base))
-		ft_putnbr(nbr, base, base_len);
+	i = 0;
+	while (str[i] != to_find && str[i] != '\0')
+		i++;
+	if (str[i] == '\0')
+		return (-1);
+	return (i);
 }
 
 bool	ft_verify_base(char *base)
@@ -39,8 +43,8 @@ bool	ft_verify_base(char *base)
 	base_len = ft_strlen(base);
 	if (base_len <= 1)
 		return (false);
-	while (base[i] != '+' && base[i] != '-' && base[i] != ' '
-		&& base[i] != '\0')
+	while (base[i] != '+' && base[i] != '-' && !(base[i] >= '\t'
+			&& base[i] <= '\r') && base[i] != ' ' && base[i] != '\0')
 		i++;
 	if (i != base_len)
 		return (false);
@@ -54,48 +58,51 @@ bool	ft_verify_base(char *base)
 	return (true);
 }
 
-void	ft_putnbr(int nb, char *base, int base_len)
+char	*ft_convnbr_base(int nbr, char *base)
 {
-	long	nbr;
+	int		base_len;
+	int		size;
+	int		i;
+	char	*str_nbr;
 
-	nbr = nb;
+	base_len = ft_strlen(base);
+	size = ft_nbrlen(nbr, base_len);
+	str_nbr = malloc((size + 1) * sizeof(char));
+	if (str_nbr == NULL)
+		return (NULL);
+	i = 0;
 	if (nbr < 0)
 	{
-		nbr *= -1;
-		write(1, "-", 1);
+		str_nbr[0] = '-';
+		i = 1;
 	}
-	if (nbr / base_len > 0)
+	str_nbr[size] = '\0';
+	while (--size >= 0 + i)
 	{
-		ft_putnbr(nbr / base_len, base, base_len);
+		str_nbr[size] = base[mod(nbr % base_len)];
+		nbr /= base_len;
 	}
-	write(1, &base[nbr % base_len], 1);
+	return (str_nbr);
 }
 
-char	*ft_strstr(char *str, char *to_find)
+int	mod(int nbr)
 {
-	int	i;
-	int	j;
-	int	len_str;
-	int	len_to_find;
+	if (nbr < 0)
+		return (nbr * -1);
+	return (nbr);
+}
 
-	len_str = ft_strlen(str);
-	len_to_find = ft_strlen(to_find);
-	i = 0;
-	if (len_str >= len_to_find)
+int	ft_nbrlen(int nbr, int base_len)
+{
+	int	len;
+
+	len = 1;
+	if (nbr < 0)
+		len++;
+	while (nbr / base_len != 0)
 	{
-		while (i <= len_str - len_to_find)
-		{
-			j = 0;
-			while (j < len_to_find)
-			{
-				if (str[i + j] != to_find[j])
-					break ;
-				j++;
-			}
-			if (j == len_to_find)
-				return (&str[i]);
-			i++;
-		}
+		len++;
+		nbr /= base_len;
 	}
-	return (NULL);
+	return (len);
 }

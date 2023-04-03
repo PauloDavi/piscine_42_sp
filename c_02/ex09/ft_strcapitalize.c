@@ -6,7 +6,7 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 10:32:47 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/03/09 22:00:59 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/03/12 20:59:19 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,18 @@ bool	is_strlowercase(char c)
 	return (false);
 }
 
-bool	is_strnumber(char c)
+char	*ft_strlowcase(char *str)
 {
-	if (c >= '0' && c <= '9')
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		return (true);
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += ('a' - 'A');
+		i++;
 	}
-	return (false);
+	return (str);
 }
 
 char	*ft_strcapitalize(char *str)
@@ -44,6 +49,7 @@ char	*ft_strcapitalize(char *str)
 	int	i;
 
 	i = 0;
+	ft_strlowcase(str);
 	while (str[i] != '\0')
 	{
 		if (i == 0)
@@ -53,15 +59,10 @@ char	*ft_strcapitalize(char *str)
 		}
 		else
 		{
-			if (!is_strupcase(str[i]) && !is_strlowercase(str[i])
-				&& !is_strnumber(str[i]))
-			{
+			if (str[i] >= 32 && str[i] <= 47)
 				if (str[i + 1] != '\0')
-				{
 					if (is_strlowercase(str[i + 1]))
 						str[i + 1] -= 'a' - 'A';
-				}
-			}
 		}
 		i++;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paulodavi <paulodavi@student.42.fr>        +#+  +:+       +#+        */
+/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 23:00:12 by paulodavi         #+#    #+#             */
-/*   Updated: 2023/03/16 23:00:25 by paulodavi        ###   ########.fr       */
+/*   Created: 2023/03/18 16:48:28 by pdavi-al          #+#    #+#             */
+/*   Updated: 2023/03/18 16:50:23 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ int	ft_is_prime(int nb);
 
 int	ft_find_next_prime(int nb)
 {
-	while (!ft_is_prime(nb) && nb < 2147483647)
+	while (nb < __INT_MAX__ && !ft_is_prime(nb))
 		nb++;
 	return (nb);
 }
@@ -26,13 +26,11 @@ int	ft_is_prime(int nb)
 	i = 2;
 	if (nb <= 1)
 		return (0);
-	while (i < nb)
+	while (i <= nb / 2)
 	{
 		if (nb % i == 0)
-			break ;
+			return (0);
 		i++;
 	}
-	if (i == nb)
-		return (1);
-	return (0);
+	return (1);
 }

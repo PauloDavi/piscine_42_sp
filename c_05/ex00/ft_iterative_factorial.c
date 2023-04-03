@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paulodavi <paulodavi@student.42.fr>        +#+  +:+       +#+        */
+/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 23:24:38 by paulodavi         #+#    #+#             */
-/*   Updated: 2023/03/16 00:03:34 by paulodavi        ###   ########.fr       */
+/*   Created: 2023/03/18 15:45:26 by pdavi-al          #+#    #+#             */
+/*   Updated: 2023/03/18 15:54:12 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_iterative_factorial(int nb)
 {
-	int	number;
+	int	i;
 
-	number = 1;
 	if (nb < 0)
 		return (0);
 	if (nb == 0)
 		return (1);
-	while (nb >= 1)
-		number *= nb--;
-	return (number);
+	i = nb;
+	while (--nb)
+		i *= nb;
+	return (i);
 }

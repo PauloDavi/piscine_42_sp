@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:26:46 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/03/20 15:28:05 by pdavi-al         ###   ########.fr       */
+/*   Created: 2023/03/18 16:41:04 by pdavi-al          #+#    #+#             */
+/*   Updated: 2023/03/18 16:50:31 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	ft_is_prime(int nb)
 	while (i <= nb / 2)
 	{
 		if (nb % i == 0)
-			return (1);
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }

@@ -13,5 +13,4 @@
 | [ft_strlowcase.c](ex08/ft_strlowcase.c)                     | OK     |
 | [ft_strcapitalize.c](ex09/ft_strcapitalize.c)               | KO     |
 | [ft_strlcpy.c](ex10/ft_strlcpy.c)                           | KO     |
-| [ft_putstr_non_printable.c](ex11/ft_putstr_non_printable.c) | KO     |
-| [ft_print_memory.c](ex12/ft_print_memory.c)                 | KO     |
+| [ft_putstr_non_printable.c](ex11/ft_putstr_non_printable.c) | OK     |

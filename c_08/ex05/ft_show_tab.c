@@ -6,12 +6,11 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:22:26 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/03/22 11:06:56 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/03/23 18:56:07 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_str.h"
-#include <stdlib.h>
 #include <unistd.h>
 
 void	ft_putchar(char c);

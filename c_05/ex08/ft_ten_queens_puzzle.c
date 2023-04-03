@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ten_queens_puzzle.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paulodavi <paulodavi@student.42.fr>        +#+  +:+       +#+        */
+/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:52:13 by paulodavi         #+#    #+#             */
-/*   Updated: 2023/03/19 19:18:36 by paulodavi        ###   ########.fr       */
+/*   Updated: 2023/03/20 21:07:45 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@ void	solve_puzzle(int board[N], int column, int *found_solutions);
 bool	is_valid(int board[N], int row, int column);
 void	print_solution(int board[N]);
 int		ft_ten_queens_puzzle(void);
-
-int	main(void)
-{
-	ft_ten_queens_puzzle();
-}
 
 int	ft_ten_queens_puzzle(void)
 {

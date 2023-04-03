@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 00:22:45 by paulodavi         #+#    #+#             */
-/*   Updated: 2023/03/20 15:28:00 by pdavi-al         ###   ########.fr       */
+/*   Created: 2023/03/18 15:54:43 by pdavi-al          #+#    #+#             */
+/*   Updated: 2023/03/20 19:16:09 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_iterative_power(int nb, int power)
 {
-	int	number;
+	int	i;
 
-	number = nb;
 	if (power < 0)
 		return (0);
 	if (power == 0)
 		return (1);
+	i = nb;
 	while (--power)
-		number *= nb;
-	return (number);
+		i *= nb;
+	return (i);
 }

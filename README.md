@@ -13,15 +13,10 @@ Processo seletivo(piscina) para [ecole 42 SP](https://www.42sp.org.br/) realizad
 | [c_02](c_02/README.md)         | 55%    |
 | [c_03](c_03/README.md)         | 100%   |
 | [c_04](c_04/README.md)         | 100%   |
-| [c_05](c_05/README.md)         | -      |
+| [c_05](c_05/README.md)         | 100%   |
 | [c_06](c_06/README.md)         | 100%   |
-| [c_07](c_07/README.md)         | -      |
-| [c_08](c_08/README.md)         | -      |
-| [c_09](c_09/README.md)         | -      |
-| [c_10](c_10/README.md)         | -      |
-| [c_11](c_11/README.md)         | -      |
-| [c_12](c_12/README.md)         | -      |
-| [c_13](c_13/README.md)         | -      |
+| [c_07](c_07/README.md)         | 80%    |
+| [c_08](c_08/README.md)         | 70%    |
 
 ## Rush
 
@@ -37,5 +32,5 @@ Processo seletivo(piscina) para [ecole 42 SP](https://www.42sp.org.br/) realizad
 | ----------- | ------ |
 | Exame 00    | 100%   |
 | Exame 01    | 100%   |
-| Exame 02    | -      |
-| Exame Final | -      |
+| Exame 02    | 100%   |
+| Exame Final | 84%    |

@@ -6,7 +6,7 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 03:05:33 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/03/18 03:21:42 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/03/23 03:19:10 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@ char	*ft_strcpy(char *dest, char *src);
 char	*ft_strdup(char *src)
 {
 	char	*dest;
-	int		i;
 
-	i = 0;
-	dest = (char *)malloc(ft_strlen(src) * sizeof(char));
+	dest = malloc((ft_strlen(src) + 1) * sizeof(char));
 	if (dest == NULL)
 		return (dest);
 	return (ft_strcpy(dest, src));
